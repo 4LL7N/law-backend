@@ -5,6 +5,7 @@ import cors from "cors"
 
 import authRoute from './routes/auth'
 import carosuelRouter from './routes/carousel'
+import contactRouter from './routes/contact'
 
 const app = express()
 
@@ -16,5 +17,6 @@ app.use(express.urlencoded({}))
 
 app.use('/api/auth',authRoute)
 app.use('/api/carousel',carosuelRouter)
+app.use('/api/contact',contactRouter)
 
 export default app
