@@ -16,7 +16,7 @@ router.get('/', requireAdmin, getAllContact)
  *   name: Contacts
  *   description: Contact form management endpoints
  * 
- * /contacts:
+ * /api/contacts:
  *   post:
  *     summary: Submit a new contact message
  *     tags: [Contacts]
