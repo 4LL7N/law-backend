@@ -54,6 +54,15 @@ describe('Blog API', () => {
         expect(res.body.slug).toBe(slug)
     })
 
+    it('should return blog with next and previos',async()=>{
+        const res = await request(app).get(`/api/blog/with-nav/${slug}`)
+
+        expect(res.status).toBe(200)
+        expect(res.body).toHaveProperty('current')
+        expect(res.body).toHaveProperty('previous')
+        expect(res.body).toHaveProperty('next')
+    })
+
     it('should update a blog',async () =>{
         const res = await request(app)
         .put(`/api/blog/${blogId}`)

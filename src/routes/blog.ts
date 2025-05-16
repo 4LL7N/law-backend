@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createBlog, deleteBlog, getAllBlogs, getBlogBySlug, updateBlog } from "../controllers/blog";
+import { createBlog, deleteBlog, getAllBlogs, getBlogBySlug, getBlogWithNav, updateBlog } from "../controllers/blog";
 import { requireAdmin } from "../middlewares/auth";
 import { validate } from "../middlewares/validate";
 import { blogSchema, blogUpdateSchema } from "../validators/blog";
@@ -20,6 +20,8 @@ router
     .route("/:id")
     .put(requireAdmin,validate(blogUpdateSchema),updateBlog)
     .delete(requireAdmin,deleteBlog)
+
+router.get('/with-nav/:slug',getBlogWithNav)
 
 /**
  * @swagger
