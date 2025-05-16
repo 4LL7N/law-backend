@@ -7,6 +7,7 @@ import authRoute from './routes/auth'
 import carosuelRouter from './routes/carousel'
 import contactRouter from './routes/contact'
 import teamRouter from './routes/team'
+import blogRouter from './routes/blog'
 
 
 const app = express()
@@ -21,5 +22,7 @@ app.use('/api/auth',authRoute)
 app.use('/api/carousel',carosuelRouter)
 app.use('/api/contact',contactRouter)
 app.use('/api/team',teamRouter)
+app.use('/api/blog',blogRouter)
+
 
 export default app
