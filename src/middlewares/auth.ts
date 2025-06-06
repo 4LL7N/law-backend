@@ -2,7 +2,7 @@ import { Request,Response,NextFunction } from "express";
 import jwt, { JwtPayload } from "jsonwebtoken"
 
 export const requireAdmin = (req:Request,res:Response,next:NextFunction) => {
-    const token = req.cookies.token
+    const token = req.cookies.accessToken || req.cookies.refreshToken
     if(!token){
         res.status(401).json({
             message:"Unauthorzed"

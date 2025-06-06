@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import { validate } from '../middlewares/validate'
-import { login, register } from '../controllers/auth'
+import { login, refreshToken, register } from '../controllers/auth'
 import { loginSchema, registerSchema } from '../validators/auth'
 
 const router = Router()
@@ -64,5 +64,7 @@ router.post('/register', validate(registerSchema), register)
  *              description: Invalid credentials
  */
 router.post('/login', validate(loginSchema), login)
+
+router.post('/refresh-token',refreshToken)
 
 export default router

@@ -9,6 +9,10 @@ const adminSchema = new mongoose.Schema({
     password:{
         type:String,
         require:true
+    },
+    refreshToken:{
+        type:String,
+        default:null
     }
 },{timestamps:true})
 
